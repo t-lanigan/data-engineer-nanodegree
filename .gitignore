@@ -1,4 +1,4 @@
 *.ipynb_checkpoints
-data-modeling/apache-cassandra-3.11.10
+data-modeling/apache-cassandra*
 .DS_Store
 data-modeling/apache-cassandra-3.11.10-bin.tar.gz
