@@ -50,7 +50,7 @@ def process_log_file(cur, filepath):
     time_cols = ['ts','hour', 'day', 'week', 'month', 'year', 'weekday']
     df['hour'] = df['ts'].dt.hour
     df['day'] = df['ts'].dt.day
-    df['week'] = df['ts'].dt.isocalendar().week
+    df['week'] = df['ts'].dt.week
     df['month'] = df['ts'].dt.month
     df['year'] = df['ts'].dt.year
     df['weekday'] = df['ts'].dt.weekday
