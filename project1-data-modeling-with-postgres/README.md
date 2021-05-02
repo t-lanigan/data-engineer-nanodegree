@@ -1,20 +1,17 @@
 # Project 1 - Data Modeling with Postgres
 
-The first project of the Data Engineering Nanodegree by Udacity.
+The first project of the Data Engineering Nanodegree by Udacity. The task is to design a star shaped databased for a startup called sparkify.
 
 ## Instructions
 
-To set up the database you need a instance of postgres running. See the [website](https://www.postgresql.org/download/) for instructions.
+Follow these steps to run the project:
 
-Then a super user named `student` with password 'student' must be created. This is becuase some of the sripts required that databases be dropped. To do this run `createuser --interactive student` and select `y` for superuser.
-
-To set up the database run: `make reset-db`.
-
-To run the etl run: `make run-etl`
-
-Run the jupyter notebook `test.ipynb` to see what is in the databased, or connect to it using the commandline tool `psql sparkifydb `.
-
-You can then run `\dt` to see the tables and a command like `SELECT * FROM artists;` to see whats in the tables.
+* To set up the database you need a instance of postgres running. See the [website](https://www.postgresql.org/download/) for instructions.
+* Then a super user named `student` with password 'student' must be created. This is becuase some of the sripts required that databases be dropped. To do this run `createuser --interactive student` and select `y` for superuser.
+* To set up the database run: `make reset-db`. This runs the `create_tables.py` script.
+* To run the etl run: `make run-etl`. This runs the `etl.py` script.
+* Run the jupyter notebook `test.ipynb` to see what is in the databased, or connect to it using the commandline tool `psql sparkifydb `.
+* You can then run `\dt` to see the tables and a command like `SELECT * FROM artists;` to see whats in the tables.
 
 ## Schema
 
