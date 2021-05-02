@@ -4,7 +4,6 @@ start-cassandra:
 stop-cassandra:
 	pgrep -u tyler -f cassandra | xargs kill -9
 
-
 start-postgres:
 	pg_ctl -D /usr/local/var/postgres start
 
