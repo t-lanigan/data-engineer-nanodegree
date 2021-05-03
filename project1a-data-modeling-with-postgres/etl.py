@@ -82,8 +82,7 @@ def process_log_file(cur, filepath):
 
         # insert songplay record
 
-        songplay_data = (index,
-                        row['ts'],
+        songplay_data = (row['ts'],
                         int(row['userId']),
                         row['level'],
                         songid,
