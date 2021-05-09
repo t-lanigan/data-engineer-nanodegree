@@ -4,11 +4,11 @@ start-cassandra:
 stop-cassandra:
 	pgrep -u tyler -f cassandra | xargs kill -9
 
-run-postgres:
-	pg_ctl -D /usr/local/var/postgres start
+# run-postgres:
+# 	pg_ctl -D /usr/local/var/postgres start
 
-stop-postgres:
-	pg_ctl -D /usr/local/var/postgres stop
+# stop-postgres:
+# 	pg_ctl -D /usr/local/var/postgres stop
 
 run-postgres-in-docker:
 	docker pull postgres
@@ -16,7 +16,7 @@ run-postgres-in-docker:
 	-e POSTGRES_PASSWORD="secret" \
 	--name postgres \
 	postgres
-# 	docker exec -it postgres psql -U postgres
+	docker exec -it postgres psql -U postgres -c "CREATE ROLE student LOGIN SUPERUSER PASSWORD 'student'"
 
 load-pagila-data:
 	docker exec -it postgres createdb -U postgres pagila

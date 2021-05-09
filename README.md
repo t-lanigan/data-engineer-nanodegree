@@ -8,7 +8,7 @@ To start and set up locally (not in docker):
 Start postgres:
 ```
 
-pg_ctl -D /usr/local/var/postgres start
+pg_ctl -D /usr/local/var/postgres start (or stop)
 
 ```
 
@@ -19,8 +19,16 @@ postgres=# create database studentdb;
 postgres=# create user student with encrypted password 'student';
 postgres=# grant all privileges on database studentdb to student;
 ```
-* Create a super user: `createuser --interactive student` (nessesary for dropDB)
+
+Creating a super user is important for being able to drop tables
+* `CREATE ROLE student LOGIN SUPERUSER PASSWORD 'student';` (using the psql tool)
+
+
+This can also be done using the  createuser binaries
+* Create a super user: `createuser --interactive student`
 * Delete a user: `dropuser username -i`
+
+Handy for creating and deleting databases.
 * Database commands: `createdb`, `dropdb`
 
 
@@ -28,15 +36,12 @@ postgres=# grant all privileges on database studentdb to student;
 
 
 
-## Running Postgres with in Docker
+## Running Postgres with in Docker (preferred)
 
 
 To Start it up:
 
 `make run-postgres-in-docker`
-
-
-This will prompt you for a password, use student.
 
 To cleanit up:
 
@@ -67,6 +72,12 @@ conn_string = "postgresql://{}:{}@{}:{}/{}" \
                         .format(DB_USER, DB_PASSWORD, DB_ENDPOINT, DB_PORT, DB)
 
 conn = psycopg2.connect(conn_string)
+```
+
+To connect to a database that is running in docker:
+
+```
+docker exec -it postgres psql -U student pagila
 ```
 
 
