@@ -13,6 +13,7 @@ stop-cassandra:
 run-postgres-in-docker:
 	docker pull postgres
 	docker run -p 5432:5432 -d \
+	-v $(shell pwd)/lessons/data-warehouses/data:/data \
 	-e POSTGRES_PASSWORD="secret" \
 	--name postgres \
 	postgres
