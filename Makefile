@@ -16,6 +16,7 @@ run-postgres-in-docker:
 	-e POSTGRES_PASSWORD="secret" \
 	--name postgres \
 	postgres
+	sleep 2
 	docker exec -it postgres psql -U postgres -c "CREATE ROLE student LOGIN SUPERUSER PASSWORD 'student'"
 
 load-pagila-data:
