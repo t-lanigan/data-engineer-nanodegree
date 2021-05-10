@@ -81,9 +81,6 @@ docker exec -it postgres psql -U student pagila
 ```
 
 
-
-
-
 ## Cassandra Commands
 
 
