@@ -23,13 +23,7 @@ def main():
     config = configparser.ConfigParser()
     config.read('dwh.cfg')
 
-    host = config['CLUSTER']['HOST']
-    db_name = config['CLUSTER']['DB_NAME']
-    user = config['CLUSTER']['DB_USER']
-    password = config['CLUSTER']['DB_PASSWORD']
-    port = config['CLUSTER']['DB_PORT']
-
-    conn = psycopg2.connect(f"host={host} dbname={db_name} user={user} password={password} port={port}")
+    conn = psycopg2.connect("host={} dbname={} user={} password={} port={}".format(*config['CLUSTER'].values()))
     curr = conn.cursor()
     
     run_validation(curr, conn)
