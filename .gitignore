@@ -3,3 +3,7 @@
 .DS_Store
 *apache-cassandra-3.11.10-bin.tar.gz
 *__pycache__*
+project2-datawarehouse-with-redshift/dwh.cfg
+project2-datawarehouse-with-redshift/log_data/*
+project2-datawarehouse-with-redshift/log_json_path.json
+project2-datawarehouse-with-redshift/song_data/*
